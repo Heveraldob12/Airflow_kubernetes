@@ -1,0 +1,30 @@
+[2023-03-19T12:24:51.279+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: get_stocks_dag.GOOG manual__2023-03-19T12:24:10.049135+00:00 [queued]>
+[2023-03-19T12:24:51.289+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: get_stocks_dag.GOOG manual__2023-03-19T12:24:10.049135+00:00 [queued]>
+[2023-03-19T12:24:51.289+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-19T12:24:51.290+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-03-19T12:24:51.290+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-19T12:24:51.303+0000] {taskinstance.py:1383} INFO - Executing <Task(_PythonDecoratedOperator): GOOG> on 2023-03-19 12:24:10.049135+00:00
+[2023-03-19T12:24:51.307+0000] {standard_task_runner.py:54} INFO - Started process 21 to run task
+[2023-03-19T12:24:51.311+0000] {standard_task_runner.py:82} INFO - Running: ['airflow', 'tasks', 'run', 'get_stocks_dag', 'GOOG', 'manual__2023-03-19T12:24:10.049135+00:00', '--job-id', '114', '--raw', '--subdir', 'DAGS_FOLDER/get_stocks_dags.py', '--cfg-path', '/tmp/tmpi0s00bha']
+[2023-03-19T12:24:51.313+0000] {standard_task_runner.py:83} INFO - Job 114: Subtask GOOG
+[2023-03-19T12:24:51.314+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/airflow/dags/get_stocks_dags.py
+[2023-03-19T12:24:52.836+0000] {logging_mixin.py:117} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/dag.py:3425 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2023-03-19T12:24:53.068+0000] {task_command.py:384} INFO - Running <TaskInstance: get_stocks_dag.GOOG manual__2023-03-19T12:24:10.049135+00:00 [running]> on host getstocksdaggoog-ddeefe37851a4708852a737e70b62ae4
+[2023-03-19T12:24:54.362+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=get_stocks_dag
+AIRFLOW_CTX_TASK_ID=GOOG
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-19T12:24:10.049135+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-19T12:24:10.049135+00:00
+[2023-03-19T12:25:57.647+0000] {local_task_job.py:228} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2023-03-19T12:25:57.649+0000] {process_utils.py:133} INFO - Sending Signals.SIGTERM to group 21. PIDs of all processes in the group: [21]
+[2023-03-19T12:25:57.649+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGTERM to group 21
+[2023-03-19T12:25:57.650+0000] {taskinstance.py:1562} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-03-19T12:25:57.650+0000] {logging_mixin.py:117} INFO - Failed to get ticker 'GOOG' reason: Task received SIGTERM signal
+[2023-03-19T12:25:57.653+0000] {logging_mixin.py:117} INFO - - GOOG: No data found for this date range, symbol may be delisted
+[2023-03-19T12:25:57.994+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-03-19T12:25:58.003+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=get_stocks_dag, task_id=GOOG, execution_date=20230319T122410, start_date=20230319T122451, end_date=20230319T122558
+[2023-03-19T12:25:58.917+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=21, status='terminated', exitcode=0, started='12:24:50') (21) terminated with exit code 0
